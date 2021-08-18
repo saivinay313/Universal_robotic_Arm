@@ -1,0 +1,36 @@
+#publish joint states
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50
+
+#position_controller:
+joint1_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: Base_shoulder
+  pid: {p: 50.0, i: 0, d: 10}
+
+joint2_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: shoulder_elbow
+  pid: {p: 50.0, i: 0, d: 10}
+
+joint3_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: elbow_wrist_1
+  pid: {p: 50.0, i: 0, d: 10}
+
+joint4_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: wrist_1_wrist_2
+  pid: {p: 50.0, i: 0, d: 10}
+
+joint5_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: wrist_2_wrist_3
+  pid: {p: 50.0, i: 0, d: 10}
+
+joint6_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: wrist_3_tool_flange
+  pid: {p: 50.0, i: 0, d: 10}
+

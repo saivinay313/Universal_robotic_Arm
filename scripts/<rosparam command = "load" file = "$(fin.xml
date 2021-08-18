@@ -1,0 +1,24 @@
+<rosparam command = "load" file = "$(find universal_robot)/config/control.yaml"/>
+
+    <node name="controller_spawner" pkg = "controller_manager" type = "spawner" 
+        respond = "false" output = "screen" ns = "/simple_robot"
+        args = "--namespace=/simple_robot 
+        joint_state_controller
+        joint1_position_controller
+        joint2_position_controller
+        joint3_position_controller
+        joint4_position_controller
+        joint5_position_controller
+        joint6_position_controller        
+        --timeout 60">
+    </node>
+
+
+    <!--rqt-->
+    <node name = "rqt_reconfigure" pkg = "rqt_reconfigure" type = "rqt_reconfigure"/>
+    <name name = "rqt_publisher" pkg = "rqt_publisher" type = "rqt_publisher"/>
+    
+
+    <gazebo>
+		<plugin name = "gazebo_ros_controll" filename = "libgazebo_ros_control.so"/>
+	</gazebo>
